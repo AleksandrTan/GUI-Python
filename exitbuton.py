@@ -1,5 +1,6 @@
 import sys
 from tkinter import *
+from tkinter.messagebox import askokcancel
 
 class MyButtonExit(Button):
     def __init__(self, parent=None, **configs):
@@ -10,4 +11,6 @@ class MyButtonExit(Button):
 
     def __call__(self, *args, **kwargs):
         #sys.exit()
-        self.quit()
+        ans = askokcancel('Realy Exit!!!', 'Yes Exit!!!')
+        if ans:
+            self.quit()
