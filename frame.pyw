@@ -15,9 +15,9 @@ class MyFrame(Frame):
         self.make_widgets()
 
     def make_widgets(self):
-        LabelClass(text='Hello Alex Tan!!!', height=3, width=90)
+        labels = LabelClass(text='Hello Alex Tan!!!', height=3, width=90)
         MyButton().run()
-        NewWindow()
+        NewWindow(labels)
         DialogWindow()
         MyButtonExit()
 

@@ -3,11 +3,12 @@ from tkinter import Button, YES, BOTH, Toplevel
 from tkinter.colorchooser import askcolor
 
 class NewWindow(Button):
-    def __init__(self, parent=None, **configs):
+    def __init__(self, labels=0, parent=None, **configs):
         Button.__init__(self, parent, **configs)
         self.config(text='New Window!', command=self.__call__)
         self.config(bg='green', fg='yellow', padx=10, pady=2, cursor='hand2')
         self.pack(expand=YES, fill=BOTH)
+        self.labels = labels
 
     def __call__(self, *args, **kwargs):
         newwindow = Toplevel()
@@ -18,5 +19,6 @@ class NewWindow(Button):
         Button(newwindow, text='Destroy new window!!!', command=newwindow.destroy).pack()
 
     def show_color(self):
-        data = askcolor()
+        data, hexstr = askcolor()
         print(data)
+        self.labels.config(bg=hexstr, fg='yellow')
