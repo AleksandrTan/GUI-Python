@@ -14,6 +14,9 @@ class NewWindow(Button):
         makemodal = True
         newwindow = Toplevel()
         newwindow.iconbitmap(r'E:\WebProjects\Шаблоны BFG\Templates\site\images\favicon.ico')
+        """
+        Don`t close window with X
+        """
         newwindow.protocol('WM_DELETE_WINDOW', lambda: None)
         newwindow.title('MyNewWindow')
         Button(newwindow, text='Choise Color!', bg='green', command=self.show_color).pack()
